@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NbThemeModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbSidebarModule, NbSidebarService } from '@nebular/theme';
+import { SomePageModule } from './some-page/some-page.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +14,13 @@ import { NbThemeModule } from '@nebular/theme';
     BrowserModule,
     AppRoutingModule,
     NbThemeModule.forRoot(),
+    SomePageModule,
   ],
-  providers: [],
+  // exports: [
+  //   NbCardModule,
+  // ],
+  // providers: [NbSidebarService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
